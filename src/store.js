@@ -13,7 +13,7 @@ export default new Vuex.Store({
     }
   },
   actions: {
-    async getJokes({ state, commit }) {
+    async getJokes({ commit }) {
       try {
         let response = await fetch("https://icanhazdadjoke.com/", {
           headers: { Accept: "application/json" }
