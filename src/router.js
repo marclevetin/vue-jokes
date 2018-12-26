@@ -3,6 +3,7 @@ import Router from "vue-router";
 import Home from "./views/Home.vue";
 import Search from "./views/Search.vue";
 import About from "./views/About.vue";
+import Joke from "./views/Joke.vue";
 
 Vue.use(Router);
 
@@ -32,7 +33,7 @@ export default new Router({
     {
       path: "/joke",
       name: "joke",
-      component: Search
+      component: Joke
     }
   ]
 });

@@ -1,0 +1,28 @@
+<template>
+  <div>
+    <h1>Random Joke</h1>
+    <v-btn @click="getJokes()">Get a joke</v-btn>
+    <h2>{{ joke }}</h2>
+  </div>
+</template>
+
+<script>
+export default {
+  name: "Joke",
+  methods: {
+    getJokes() {
+      this.$store.dispatch("getJokes");
+    }
+  },
+  mounted: function() {
+    this.getJokes();
+  },
+  computed: {
+    joke() {
+      return this.$store.state.joke;
+    }
+  }
+};
+</script>
+
+<style scoped></style>
