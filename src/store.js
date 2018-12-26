@@ -8,19 +8,19 @@ export default new Vuex.Store({
     joke: 'default'
   },
   mutations: {
-    setJokes(state, payload) {
+    setSingleJoke(state, payload) {
       state.joke = payload;
     }
   },
   actions: {
-    async getJokes({ commit }) {
+    async getSingleJoke({ commit }) {
       try {
         let response = await fetch("https://icanhazdadjoke.com/", {
           headers: { Accept: "application/json" }
         }).then(data => data.json()).then(myObject => myObject.joke);
-        commit("setJokes", response);
+        commit("setSingleJoke", response);
       } catch (error) {
-        commit("setJokes", ["nuts"]);
+        commit("setSingleJoke", "Oops.  Problem with API.");
       }
     }
   }

@@ -11,7 +11,7 @@ export default {
   name: "Joke",
   methods: {
     getJokes() {
-      this.$store.dispatch("getJokes");
+      this.$store.dispatch("getSingleJoke");
     }
   },
   mounted: function() {
