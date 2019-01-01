@@ -3,7 +3,7 @@
     <v-navigation-drawer
       app
       v-model="drawer"
-      class="blue"
+      class="green lighten-2"
       disable-resize-watcher
       temporary
     >
@@ -23,7 +23,9 @@
         </v-list-tile>
       </v-list>
     </v-navigation-drawer>
-    <v-toolbar>
+    <v-toolbar
+    class="green lighten-2"
+    >
       <v-toolbar-side-icon class="hidden-md-and-up" @click="drawer = !drawer">
       </v-toolbar-side-icon>
       <router-link to="/">
@@ -31,7 +33,7 @@
       </router-link>
       <v-spacer></v-spacer>
       <v-toolbar-items class="hidden-sm-and-down">
-        <v-btn flat v-for="item in items" :key="item.title" :to="item.url">{{
+        <v-btn class="white--text" flat v-for="item in items" :key="item.title" :to="item.url">{{
           item.title
         }}</v-btn>
       </v-toolbar-items>
@@ -56,4 +58,9 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+a {
+  color: white;
+  text-decoration: none; 
+}
+</style>

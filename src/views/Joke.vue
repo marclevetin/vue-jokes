@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>Random Joke</h1>
-    <v-btn @click="getJokes()">Get a joke</v-btn>
+    <v-btn color="success" @click="getJokes()">Get a joke</v-btn>
     <h2>{{ joke }}</h2>
   </div>
 </template>
