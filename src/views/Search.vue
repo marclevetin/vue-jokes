@@ -11,23 +11,14 @@
         required
       ></v-text-field>
       <v-btn :disabled="!valid" @click="getJokes(searchTerm)" color="success">Submit</v-btn>
-      <v-btn small flat @click="clear">Clear</v-btn>
+      <v-btn flat @click="clear">Clear</v-btn>
     </v-form>
 
-    <v-list v-if="allJokes.length">
-      <v-list-tile v-for="(joke, index) in allJokes" :key="index" @click>
-        <v-list-tile-content>
-          <v-list-tile-title class="list__tile__override">{{joke.joke}}</v-list-tile-title>
-        </v-list-tile-content>
-      </v-list-tile>
-    </v-list>
-    <v-list v-else="!allJokes.length">
-      <v-list-tile>
-        <v-list-tile-content>
-          <v-list-tile-title>No results found.</v-list-tile-title>
-        </v-list-tile-content>
-      </v-list-tile>
-    </v-list>
+    <v-card v-for="(joke, index) in allJokes" :key="index">
+      <v-card-text>
+        {{joke.joke}}
+      </v-card-text>
+    </v-card>
   </div>
 </template>
 
@@ -61,9 +52,4 @@ export default {
 </script>
 
 <style scoped>
-  .list__tile__override {
-    overflow: visible;
-    white-space: normal;
-    min-height: fit-content;
-  }
 </style>
