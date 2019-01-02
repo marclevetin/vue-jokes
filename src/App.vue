@@ -7,18 +7,20 @@
           <router-view></router-view>
         </v-container>
       </v-content>
-      <v-footer app></v-footer>
+      <custom-footer></custom-footer>
     </div>
   </v-app>
 </template>
 
 <script>
 import Navbar from "@/components/Navbar";
+import CustomFooter from "@/components/Footer";
 
 export default {
   name: "App",
   components: {
-    Navbar
+    Navbar,
+    CustomFooter
   }
 };
 </script>
