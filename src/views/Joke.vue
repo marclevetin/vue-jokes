@@ -2,10 +2,7 @@
   <div>
     <h1>Random Joke</h1>
     <v-btn color="success" @click="getJokes()">Get a joke</v-btn>
-    <single-joke 
-      :text="joke"
-    >
-    </single-joke>
+    <single-joke :text="joke"></single-joke>
   </div>
 </template>
 

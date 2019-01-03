@@ -14,15 +14,16 @@
       <v-btn flat @click="clear">Clear</v-btn>
     </v-form>
 
-    <single-joke 
-      v-for="(joke, index) in allJokes" 
-      is="single-joke"
-      :key="index"
-      :joke="joke"
-      :index="index"
-      :text="joke.joke"
-    >
-    </single-joke>
+    <v-slide-y-transition group>
+      <single-joke
+        v-for="(joke, index) in allJokes"
+        is="single-joke"
+        :key="index"
+        :joke="joke"
+        :index="index"
+        :text="joke.joke"
+      ></single-joke>
+    </v-slide-y-transition>
   </div>
 </template>
 
