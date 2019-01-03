@@ -14,15 +14,21 @@
       <v-btn flat @click="clear">Clear</v-btn>
     </v-form>
 
-    <v-card v-for="(joke, index) in allJokes" :key="index">
-      <v-card-text>
-        {{joke.joke}}
-      </v-card-text>
-    </v-card>
+    <single-joke 
+      v-for="(joke, index) in allJokes" 
+      is="single-joke"
+      :key="index"
+      :joke="joke"
+      :index="index"
+      :text="joke.joke"
+    >
+    </single-joke>
   </div>
 </template>
 
 <script>
+import SingleJoke from "@/components/SingleJoke";
+
 export default {
   name: "Search",
   data: () => {
@@ -47,6 +53,9 @@ export default {
     allJokes() {
       return this.$store.state.allJokes;
     }
+  },
+  components: {
+    SingleJoke
   }
 };
 </script>

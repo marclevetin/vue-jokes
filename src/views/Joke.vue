@@ -2,11 +2,16 @@
   <div>
     <h1>Random Joke</h1>
     <v-btn color="success" @click="getJokes()">Get a joke</v-btn>
-    <h2>{{ joke }}</h2>
+    <single-joke 
+      :text="joke"
+    >
+    </single-joke>
   </div>
 </template>
 
 <script>
+import SingleJoke from '@/components/SingleJoke';
+
 export default {
   name: "Joke",
   methods: {
@@ -21,6 +26,9 @@ export default {
     joke() {
       return this.$store.state.joke;
     }
+  },
+  components: {
+    SingleJoke
   }
 };
 </script>
