@@ -2,21 +2,9 @@
   <v-footer app dark height="auto">
     <v-card class="flex" flat tile>
       <v-card-title class="green lighten-2">
-        <strong class="subheading">Find me online</strong>
-
         <v-spacer></v-spacer>
-
-        <v-btn
-          v-for="icon in icons"
-          :key="icon"
-          class="mx-3 white--text"
-          icon
-        >
-          <v-icon size="24px">{{ icon }}</v-icon>
-        </v-btn>
-
-        <v-btn v-for="link in links" :key="link.icon" class="mx-3" dark icon>
-          <v-icon size="24px">web</v-icon>
+        <v-btn v-for="link in links" :key="link.icon" class="mx-3" dark icon :href="link.url" target="blank">
+          <v-icon size="24px">{{link.icon}}</v-icon>
         </v-btn>
       </v-card-title>
 
@@ -32,17 +20,10 @@
 export default {
   name: "CustomFooter",
   data: () => ({
-    icons: [
-        'fab fa-facebook',
-        'fab fa-twitter',
-        'fab fa-google-plus',
-        'fab fa-linkedin',
-        'fab fa-instagram'
-    ],
     links: [
-    { icon:"fab fa-twitter", url: "" },
-    { icon:"fab fa-linkedin", url: "" },
-    { icon: "fas fa-hat-wizard", url: ""}
+    { icon: "fas fa-hat-wizard", url: "http://www.derbyhat.org"},
+    { icon:"fab fa-linkedin", url: "https://www.linkedin.com/in/marclevetin" },
+    { icon:"fab fa-twitter", url: "https://twitter.com/_derbyhat" },
     ]
   })
 };
